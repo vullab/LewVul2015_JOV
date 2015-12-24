@@ -67,7 +67,9 @@ version='_v10';
 numModels=length(modFold);
 for mi=1:numModels
     modFold{mi}=strcat(modFold{mi},version);
-    mkdir(modFold{mi});
+    if ~exist(modFold{mi})
+        mkdir(modFold{mi});
+    end
 end
 
 %% Run relative position model
